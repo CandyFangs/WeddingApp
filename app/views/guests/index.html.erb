@@ -1,0 +1,28 @@
+<%= flash[:notice] if flash[:notice] %>
+<h2>Our guest list</h2>
+<table class="table" border="1">
+	<tr>
+	  <th>ID</th>
+		<th>Name</th>
+		<th>Plus one?</th>
+		<th>Date</th>
+		<th>Confirmation</th>
+		<th>Side</th>
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+	<% @guests.each do |guest| %>
+	<tr>
+	  <td><%= guest.id %></td>
+		<td><%= guest.name %></td>
+		<td><%= guest.plusone %></td>
+		<td><%= guest.datename %></td>
+		<td><%= guest.confirmation %></td>
+		<td><%= guest.side %></td>
+		<td><%= link_to 'Edit', edit_guest_path(guest) %></td>
+		<td><%= link_to 'Delete', guests_path %></td>
+	</tr>
+	<% end %>
+</table>
+<%= link_to 'Add', new_guest_path%>
+<%= link_to 'Go back', root_path%>
