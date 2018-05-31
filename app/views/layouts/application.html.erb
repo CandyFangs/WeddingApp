@@ -9,6 +9,25 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <a class="navbar-brand" href= "/" >Wedding App</a>
+	        <div class="navbar-collapse collapse navbar-responsive-collapse">
+	          <ul class="nav navbar-nav">
+              <li><%= link_to "About us", aboutus_path %></li>
+	            <li><%= link_to "About the wedding", aboutwedding_path  %></li>
+	            <li><%= link_to "Our guestlist", guests_path  %></li>
+	          </ul>
+	      </div>
+	    </div>
+	  </div>
+  	<div class="row">
+  	  <div class="col-md-2"></div>
+		  <div class="col-md-8">
+        <%= yield %>
+		  </div>
+			<div class="col-md-2"></div>
+		</div>
+
   </body>
 </html>

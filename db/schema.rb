@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180530170042) do
+ActiveRecord::Schema.define(version: 20180531121132) do
 
   create_table "guests", force: :cascade do |t|
     t.string "name"
     t.boolean "plusone"
     t.string "datename"
-    t.boolean "confirmation"
+    t.boolean "confirmation", default: false
     t.string "side"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

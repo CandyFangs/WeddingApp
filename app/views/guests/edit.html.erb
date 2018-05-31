@@ -1,3 +1,4 @@
 <%= flash[:error] if flash[:error] %>
 <h3>So what's changed?</h3>
-<%= render partial: 'form', locals: { guest: @guest } %>
+<%= render partial: 'form', locals: { guest: @guest } %></br>
+<%= link_to 'Go back', guests_path %>
