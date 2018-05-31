@@ -15,9 +15,9 @@
 	<tr>
 	  <td><%= guest.id %></td>
 		<td><%= guest.name %></td>
-		<td><%= guest.plusone %></td>
+		<td><%= yes_no(guest.plusone) %></td>
 		<td><%= guest.datename %></td>
-		<td><%= guest.confirmation %></td>
+		<td><%= yes_no(guest.confirmation) %></td>
 		<td><%= guest.side %></td>
 		<td><%= link_to 'Edit', edit_guest_path(guest) %></td>
 		<td><%= link_to 'Usuń', guest_path(guest), method: :delete, data: { confirm: "Are you sure?" } %></td>
