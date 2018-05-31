@@ -8,12 +8,12 @@ class GuestsController < ApplicationController
   end
 
   def create
-      @guest = Guest.new(guest_params)
+    @guest = Guest.new(guest_params)
     if @guest.save
-      flash.now[:notice] = "W bazie utworzono nową rzecz do zrobienia"
+      flash.now[:notice] = "New guest was added"
       redirect_to guests_path
     else
-      flash[:error] = "Nie udało się zapisać"
+      flash[:error] = "Something went wrong"
       render :new
     end
   end
@@ -25,10 +25,10 @@ class GuestsController < ApplicationController
   def update
     @guest = Guest.find(params[:id])
     if @guest.update(guest_params)
-      flash[:notice] = "Zmodyfikowano"
+      flash[:notice] = "Your guest was modified"
       redirect_to guests_path
     else
-      flash[:error] = "Nie udało się zapisać zmian"
+      flash[:error] = "Something went wrong"
       render :edit
     end
   end
@@ -36,9 +36,15 @@ class GuestsController < ApplicationController
   def destroy
     @guest = Guest.find(params[:id])
     @guest.destroy
-    flash[:notice] = "Usunięto"
+    flash[:notice] = "...And your guest is gone."
     redirect_to guests_path
   end
+
+  # protected
+
+  # def set_guest
+  #   @guest = Guest.find(params[:id])
+  # end
 
   private
 

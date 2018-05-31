@@ -1,6 +1,24 @@
 <%= form_for(@guest) do |f| %>
 	<div class="form-group">
-		<%= f.text_field :name %>
+	  <%= label_tag(:name, "What's his/hers name?") %></br>
+		<%= f.text_field :name %></br>
+	</div>
+  <div class="form-group">
+	  <%= label_tag(:plusone, "Will he/she come with a date?") %></br>
+		<%= f.check_box :plusone %></br>
+	</div>
+  <div class="form-group">
+	  <%= label_tag(:datename, "What's the name of the date?") %></br>
+		<%= f.text_field :datename %></br>
+	</div>
+	<div class="form-group">
+		<%= label_tag(:confirmation, "Is his/her presence confirmed?") %></br>
+		<%= f.check_box :confirmation %></br>
+  </div>
+  <div class="form-group">
+    <%= label_tag(:side, "Whose side ishe/she from?") %></br>
+    <%= f.radio_button :side, 'Batcat' %> Batcat<br />
+    <%= f.radio_button :side, 'Snek' %> Snek<br />
 	</div>
 <br />
 <%= f.button :submit %>
